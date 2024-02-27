@@ -1,0 +1,47 @@
+@import "../../../cta.scss";
+@import "../../../mixins.scss";
+
+
+.our-company{
+    margin-top: 13rem;
+    hr{
+        color: $color-gray;
+    }
+    .company_item{
+        margin-top: 2rem;
+        margin-right: 10rem;
+        margin-bottom: 6rem;
+
+        display: flex;
+        justify-content: space-between;
+        .company_number{
+            @include xlarge-title();
+            font-weight: 400;
+        }
+        .company_text{
+            width: 71rem;
+            font-size: $font-size-l;
+        }
+    }
+}
+
+@media screen and (max-width:375px) {
+    .our-company{
+        margin-top: 9rem;
+        .company_item{
+            margin-right: 0;
+            margin-bottom: 6rem;
+
+            flex-direction: column;
+            justify-content: start;
+            .company_number{
+                text-align-last: left;
+                margin-bottom: 2rem;
+            }
+            .company_text{
+                width: 100%;
+                font-size: $font-size-xm;
+            }
+        }
+    }
+}   

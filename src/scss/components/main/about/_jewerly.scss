@@ -1,0 +1,73 @@
+@import "../../../cta.scss";
+@import "../../../mixins.scss";
+
+.jewerly {
+    margin-top: 13rem;
+
+    @include flex-column();
+    color: $color-navy-blue;
+    .jewerly_title {
+        @include xlarge-title();
+        font-weight: normal;
+    }
+    .jewerly-holder {
+        margin-top: 13rem;
+        display: flex;
+        gap: 6rem;
+        align-items: center;
+        .jewerly_content {
+            .content_title {
+                line-height: 140%; /* 33.6px */
+                font-size: 500;
+                font-size: $font-size-l;
+            }
+            .content_text {
+                margin-top: 2rem;
+                font-size: $font-size-m;
+            }
+        }
+        .jewerly_video {
+            position: relative;
+            &::before {
+                content: "";
+                position: absolute;
+                z-index: 3;
+                top: 50%;
+                left: 45%;
+                width: 9.6rem;
+                height: 9.6rem;
+                background-image: url("/src/img/icons/play-btn.svg");
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .jewerly {
+        margin-top: 9rem;
+        .jewerly_title {
+            font-size: $font-size-xl;
+        }
+        .jewerly-holder {
+            margin-top: 9rem;
+            flex-direction: column-reverse;
+            .jewerly_content {
+                width: 32.8rem;
+                text-align: center;
+            }
+            .jewerly_video{
+                img{
+                    width: 32.8rem;
+                    height: 20rem;
+                }
+                &::before{
+                    top: 40%;
+                    left: 43%;
+                    width: 4.8rem;
+                    height: 4.8rem;
+                    background-image: url(/src/img/icons/play-btn-mobile.svg);
+                }
+            }
+        }
+    }
+}

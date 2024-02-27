@@ -1,0 +1,130 @@
+@import "../../cta.scss";
+@import "../../mixins.scss";
+
+.return {
+    @include flex-column();
+    gap: 13rem;
+    margin-top: 13rem;
+    color: $color-navy-blue;
+    .return-top,
+    .return-bottom {
+        @include flex-column();
+    }
+    .return_title {
+        width: 60.6rem;
+        text-align: center;
+        font-weight: 700;
+        font-size: $font-size-xl;
+    }
+    .return_cards-holder {
+        width: 100%;
+        margin-top: 6rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 3rem;
+        .card {
+            @include flex-column();
+            gap: 4.4rem;
+            text-align: center;
+
+            .card_icon {
+                width: 7.2rem;
+                height: 7.2rem;
+                @include xlarge-title();
+                background-color: $color-burnt-orange;
+                color: $color-white;
+                border-radius: 50%;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                -ms-border-radius: 50%;
+                -o-border-radius: 50%;
+            }
+            .card_title {
+                width: 24rem;
+                font-weight: 500;
+                font-size: $font-size-l;
+            }
+            .card_text {
+                font-size: $font-size-m;
+            }
+            &:first-child {
+                &:hover {
+                    .card_icon {
+                        animation: rotated 1s linear 1;
+                        -webkit-animation: rotated 1s linear 1;
+                    }
+                    .card_title {
+                        animation: rotated 1s linear 1 reverse;
+                        -webkit-animation: rotated 1s linear 1 reverse;
+                    }
+                    .card_text {
+                        animation: rotated 1s linear 1;
+                        -webkit-animation: rotated 1s linear 1;
+                    }
+                }
+            }
+            &:nth-child(2) {
+                &:hover {
+                    .card_icon {
+                        animation: rotated 1s linear 1;
+                        -webkit-animation: rotated 1s linear 1;
+                    }
+                    .card_title {
+                        animation: rotated 1s linear 1 reverse;
+                        -webkit-animation: rotated 1s linear 1 reverse;
+                    }
+                    .card_text {
+                        animation: rotated 1s linear 1;
+                        -webkit-animation: rotated 1s linear 1;
+                    }
+                }
+            }
+            &:last-child{
+                &:hover {
+                    .card_icon {
+                        animation: rotated 1s linear 1;
+                        -webkit-animation: rotated 1s linear 1;
+                    }
+                    .card_title {
+                        animation: rotated 1s linear 1 reverse;
+                        -webkit-animation: rotated 1s linear 1 reverse;
+                    }
+                    .card_text {
+                        animation: rotated 1s linear 1;
+                        -webkit-animation: rotated 1s linear 1;
+                    }
+                }
+            }
+        }
+    }
+    .return_more {
+        margin-top: 6rem;
+        font-size: $font-size-m;
+        text-decoration: underline;
+        transition: $transition-fast;
+        -webkit-transition: $transition-fast;
+        -moz-transition: $transition-fast;
+        -ms-transition: $transition-fast;
+        -o-transition: $transition-fast;
+        &:hover {
+            color: $color-burnt-orange;
+        }
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .return{
+        margin-top: 9rem;
+        gap: 9;
+        .return_title{
+            width: 32.8rem;
+            font-size: $font-size-xs;
+        }
+        .return_cards-holder{
+            margin-top: 4.5rem;
+            grid-template-columns: repeat(1,1fr);
+            column-gap: 0;
+            row-gap: 4.5rem;
+        }
+    }
+}

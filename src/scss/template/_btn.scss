@@ -1,0 +1,28 @@
+.card-btn {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    border: 1px solid $color-navy-blue;
+    line-height: 150%;
+    font-size: $font-size-m;
+    transition:$transition-fast;
+    -webkit-transition:$transition-fast;
+    -moz-transition:$transition-fast;
+    -ms-transition:$transition-fast;
+    -o-transition:$transition-fast;
+    &:hover {
+        transform: translateY(-0.2rem);
+        -webkit-transform: translateY(-0.2rem);
+        -moz-transform: translateY(-0.2rem);
+        -ms-transform: translateY(-0.2rem);
+        -o-transform: translateY(-0.2rem);
+        color: $color-coral;
+        border: 1px solid $color-coral;
+    }
+    &:active {
+        transform: translateY(0rem);
+        -webkit-transform: translateY(0rem);
+        -moz-transform: translateY(0rem);
+        -ms-transform: translateY(0rem);
+        -o-transform: translateY(0rem);
+    }
+}

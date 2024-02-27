@@ -1,0 +1,165 @@
+@import "../../cta.scss";
+@import "../../mixins.scss";
+
+.exceptions {
+    margin-top: 13rem;
+
+    @include flex-column();
+
+    color: $color-navy-blue;
+    .exceptions_title {
+        width: 60.6rem;
+        margin-bottom: 6rem;
+        text-align: center;
+        line-height: 130%; /* 46.8px */
+        font-weight: 600;
+        font-size: $font-size-xl;
+    }
+    .exception_items-holder {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+        column-gap: 3rem;
+        row-gap: 1rem;
+        .item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            padding: 2.1rem 3rem;
+            transition: $transition-fast;
+            .item_caption {
+                font-weight: 700;
+                font-size: $font-size-m;
+            }
+            &::after{
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -2;
+                width: 100%;
+                height: 100%;
+                background-color: $color-light-gray;
+            }
+            &::before{
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                width: 0%;
+                height: 100%;
+                background-color: $color-navy-blue;
+                transition: $transition-fast;
+            }
+            &:hover{
+                color: $color-white;
+                &::before{
+                    width: 100%;
+                }
+            }
+        }
+        .item-active {
+            position: relative;
+            color: $color-white;
+            .active_content {
+                display: flex;
+                justify-content: space-between;
+                padding: 2.1rem 3rem;
+                .item_caption {
+                    font-weight: 700;
+                    font-size: $font-size-m;
+                }
+            }
+            .active_text {
+                padding: 0 3rem 3rem 3rem;
+                font-size: $font-size-m;
+            }
+            &::after{
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -2;
+                width: 100%;
+                height: 100%;
+                background-color: $color-navy-blue;
+            }
+            &::before{
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                width: 100%;
+                height: 0%;
+                background-color: $color-light-gray;
+                transition: $transition-fast;
+            }
+            &:hover{
+                color: $color-navy-blue;
+                &::before{
+                    height: 100%;
+                }
+            }
+        }
+        .first {
+            grid-row: 4 / 6;
+        }
+        .second {
+            grid-column: 2;
+            grid-row: 5 / 7;
+        }
+    }
+    .exception_warning {
+        margin-top: 6rem;
+        padding: 3.2rem 9rem;
+        border: 2px solid $color-burnt-orange;
+        line-height: 150%;
+        /*24px*/
+        letter-spacing: 1.6px;
+        text-transform: uppercase;
+        font-size: $font-size-m;
+        color: $color-burnt-orange;
+        transition: $transition-fast;
+        -webkit-transition: $transition-fast;
+        -moz-transition: $transition-fast;
+        -ms-transition: $transition-fast;
+        -o-transition: $transition-fast;
+        &:hover {
+            background-color: $color-burnt-orange;
+            color: $color-white;
+            animation: hoverShake 0.2s linear 2;
+            -webkit-animation: hoverShake 0.2s linear 2;
+        }
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .exceptions{
+        margin-top: 9rem;
+        .exceptions_title{
+            width: 100%;
+            margin-bottom: 5.8rem;
+            font-size: $font-size-xs;
+        }
+        .exception_items-holder{
+            grid-template-columns: repeat(1, 1fr);
+            grid-template-rows: repeat(10, 1fr);
+            column-gap: 0;
+            .item{
+                padding: 2.1rem 2rem;
+            }
+            .second{
+                grid-column: 1;
+                grid-row: 11 / 12;
+            }
+        }
+        .exception_warning{
+            margin-top: 4.5rem;
+            padding: 2rem;
+            text-align: center;
+        }
+    }
+}

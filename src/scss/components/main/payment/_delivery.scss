@@ -1,0 +1,120 @@
+@import "../../cta.scss";
+@import "../../mixins.scss";
+
+.delivery {
+    @include flex-column();
+    gap: 6rem;
+
+    margin-top: 13rem;
+    .delivery_title {
+        line-height: 130%; /* 46.8px */
+        font-weight: 600;
+        font-size: $font-size-xl;
+        color: $color-navy-blue;
+        &::selection{
+            color: $color-burnt-orange;
+        }
+    }
+    .delivery-content {
+        width: 60.6rem;
+        text-align: center;
+        .delivery_text {
+            width: 100%;
+            line-height: 150%; /* 24px */
+            font-size: $font-size-m;
+            color: $color-navy-blue;
+            &::selection{
+                color: $color-burnt-orange;
+            }
+        }
+        .delivery_dropdown {
+            display: inline-block;
+
+            margin-top: 2rem;
+            line-height: 150%; /* 24px */
+            font-size: $font-size-m;
+            color: $color-burnt-orange;
+            i {
+                font-size: $font-size-m;
+                margin-left: 0.6rem;
+            }
+        }
+    }
+    .delivery_card-holder {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 3rem;
+        .delivery_card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3rem;
+            padding: 4.5rem 3rem;
+            text-align: center;
+            background-color: $color-light-gray;
+            color: $color-navy-blue;
+            transition: $transition-fast;
+            &:hover {
+                transform: scale(1.05);
+                -webkit-transform: scale(1.05);
+                -moz-transform: scale(1.05);
+                -ms-transform: scale(1.05);
+                -o-transform: scale(1.05);
+                box-shadow: 0 4px 8px rgba($color: #000000, $alpha: 0.1);
+            }
+            .card_title {
+                width: 24rem;
+                line-height: 140%; /* 33.6px */
+                font-weight: 500;
+                font-size: $font-size-l;
+            }
+            .card_text {
+                line-height: 150%; /* 24px */
+                font-size: $font-size-m;
+            }
+            .card_button {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 1rem;
+            }
+        }
+    }
+    .delivery_under-text {
+        width: 60.6rem;
+        line-height: 150%; /* 24px */
+        text-align: center;
+        font-size: $font-size-m;
+        color: $color-navy-blue;
+        &::selection{
+            color: $color-burnt-orange;
+        }
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .delivery{
+        gap: 3rem;
+        margin-top: 9rem;
+        .delivery_title{
+            text-align: center;
+            font-size: $font-size-xs;
+        }
+        .delivery-content{
+            width: 32.8rem;
+        }
+        .delivery_card-holder{
+            grid-template-columns: repeat(1, 1fr);
+            row-gap: 2rem;
+            .delivery_card{
+                .card_title{
+                    font-size: $font-size-xs;
+                }
+            }
+        }
+        .delivery_under-text{
+            width: 32.8rem;
+        }
+    }
+}

@@ -1,0 +1,31 @@
+@import "../../cta.scss";
+@import "../../mixins.scss";
+
+.guarante{
+    @include flex-column();
+    gap: 6rem;
+    text-align: center;
+    color: $color-navy-blue;
+    .guarante_title{
+        line-height: 130%; /* 46.8px */ 
+        font-weight: 600;
+        font-size: $font-size-xl;
+    }
+    .guarante_text{
+        width: 60.6rem;
+        line-height: 150%; /* 24px */
+        font-size: $font-size-m;
+    }
+}
+
+@media screen and (max-width: 375px) {
+        .guarante{
+            gap: 4.5rem;
+            .guarante_title{
+                font-size: $font-size-xs;
+            }
+            .guarante_text{
+                width: 100%;
+            }
+        }
+}

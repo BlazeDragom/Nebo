@@ -1,0 +1,68 @@
+@import "../../../cta.scss";
+@import "../../../mixins.scss";
+
+.about-main {
+    @include flex-column();
+    margin-top: 6rem;
+    color: $color-navy-blue;
+    .about_title {
+        line-height: 130%; /* 46.8px */
+        font-weight: 600;
+        font-size: $font-size-xl;
+    }
+    .about-holder {
+        margin-top: 6rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 6rem;
+        .about_img{
+            .image{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .about_content {
+            margin-top: 10.3rem;
+            .about_text {
+                line-height: 150%; /* 24px */
+                font-size: $font-size-m;
+            }
+            .about_text-founders {
+                width: 28.8rem;
+                margin-top: 3rem;
+                font-weight: 800;
+                font-size: $font-size-m;
+                color: $color-burnt-orange;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .about-main {
+        margin-top: 3rem;
+        .about_title {
+            font-size: $font-size-xs;
+        }
+        .about-holder {
+            margin-top: 4.5rem;
+            grid-template-columns: repeat(1, 1fr);
+            justify-items: center;
+            text-align: center;
+            .about_img{
+                .image{
+                    height: 46rem;
+                }
+            }
+            .about_content {
+                margin-top: 3rem;
+                .about_text {
+                    width: 32.8rem;
+                }
+                .about_text-founders {
+                    margin-left: 2rem;
+                }
+            }
+        }
+    }
+}
